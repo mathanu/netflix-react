@@ -3,14 +3,12 @@ import { checkValidateData } from "../utils/loginValidate";
 import HeaderCmp from "./HeaderCmp";
     import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
     import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true)
     const [ showErrMsg, setShowErrMsg] = useState(null)
-    const navigate = useNavigate();
     const dispatch = useDispatch()
 
     const email = useRef(null)
@@ -41,9 +39,7 @@ const Login = () => {
                     // An error occurred
                     // ...
                     console.log("errorerrorerrorerrorerror", error)
-                  });
-                navigate('/browse')
-                
+                  });                
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -58,9 +54,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user)
                 setShowErrMsg("Login Success"+user)
-                navigate('/browse')
                 // ...
             })
             .catch((error) => {
