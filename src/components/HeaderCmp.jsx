@@ -52,8 +52,9 @@ const HeaderCmp = () => {
     <img className="w-44 " src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo"/>
     </div>
         
-        { user && <div className="flex w-20 h-12 px-4">
-            <button onClick={handleSignout} className="bg-slate-400 text-black">(Sign Out)</button>
+        { user && <div className="flex px-2 mx-2 m-2">
+          <button className="bg-green-400 py-2 px-4 mx-2 m-2 text-lg rounded-xl text-white font-semibold">GPT Search</button>
+            <button onClick={handleSignout} className="bg-red-600 rounded-xl font-semibold text-black py-2 px-4 mx-2 m-2">Sign Out</button>
         </div> }
     </div>
         );
