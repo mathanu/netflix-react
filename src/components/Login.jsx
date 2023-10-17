@@ -5,6 +5,7 @@ import HeaderCmp from "./HeaderCmp";
     import { auth } from "../utils/firebase";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { LOGIN_BG_IMG } from "../utils/constants"
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true)
@@ -33,7 +34,7 @@ const Login = () => {
                   }).then(() => {
                     const { uid, email, displayName} = auth.currentUser
                     // Profile updated!
-                    dispatch(addUser({uid: uid, email, email, displayName, displayName}))
+                    dispatch(addUser({uid: uid, email, displayName}))
                     // ...
                   }).catch((error) => {
                     // An error occurred
@@ -70,7 +71,7 @@ const Login = () => {
         <div>
         <HeaderCmp />
            <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9db4a880-3034-4e98-bdea-5d983e86bf52/b5953637-091d-4e02-9754-2bfadc8a8f7c/IN-en-20230925-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="mainpage" />
+                <img src={LOGIN_BG_IMG} alt="mainpage" />
             </div>
             <form onSubmit={(e) => e.preventDefault()} className="w-3/12 absolute p-10 bg-black my-36 mx-auto right-0 left-0 text-white bg-opacity-80 rounded-lg">
             <h1 className="font-bold  text-2xl py-2">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
