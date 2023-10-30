@@ -12,4 +12,4 @@ export const LOGIN_BG_IMG = "https://assets.nflxext.com/ffe/siteui/vlv3/9db4a880
 
 export const SUPPORTED_LANG = [{identifier: "en", name: "English"}, {identifier: "tm", name: "Tamil"}]
 
-export const OPENAI_KEY = "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";
+export const OPENAI_KEY = "";
